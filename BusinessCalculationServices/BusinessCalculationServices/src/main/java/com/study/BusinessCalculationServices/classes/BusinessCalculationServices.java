@@ -3,9 +3,10 @@ package com.study.BusinessCalculationServices.classes;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Component
+@Service
 public class BusinessCalculationServices {
 
 	private DataService dataService;
