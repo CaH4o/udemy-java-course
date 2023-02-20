@@ -47,14 +47,14 @@ public class CourseController {
 	// POST - Create a new resource
 	// http://localhost:8080/courses
 	@PostMapping("/courses")
-	public void createCourse(@RequestBody Course course) {
+	public void createSingleCourse(@RequestBody Course course) {
 		repository.save(course);
 	}
 
 	// PUT - Update/Replace a resource
 	// http://localhost:8080/courses/1
 	@PutMapping("/courses/{id}")
-	public void updateCourse(@PathVariable long id, @RequestBody Course courseBody) {
+	public void updateSingleCourse(@PathVariable long id, @RequestBody Course courseBody) {
 		Optional<Course> course = repository.findById(id);
 
 		if (course.isEmpty()) {
@@ -67,7 +67,7 @@ public class CourseController {
 	// DELETE
 	// http://localhost:8080/courses/1
 	@DeleteMapping("/courses/{id}")
-	public void updateCourse(@PathVariable long id) {
+	public void deleteSingleCourse(@PathVariable long id) {
 		Optional<Course> course = repository.findById(id);
 
 		if (course.isEmpty()) {
